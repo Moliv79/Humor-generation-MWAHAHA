@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MWAHAHA — Two-Word Jokes | दो शब्द, एक जोक</title>
+<style>
+:root{--bg:#fff4dc;--card:#fff;--ink:#2b2118;--muted:#85745f;--acc:#ff5a2c;--acc2:#ffb400;--pur:#7b3fe4;--green:#2e9e6b;--bd:#f0dfbc;--soft:#fff9ea;--hero1:#ff5a2c;--hero2:#ffb400;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171210;--card:#251d17;--ink:#f6ead6;--muted:#b9a68f;--acc:#ff7a4d;--acc2:#ffcc4d;--pur:#a47bff;--green:#5fcf9a;--bd:#3b2f25;--soft:#1e1712;--hero1:#c2371a;--hero2:#b8830a}}
+:root[data-theme="dark"]{--bg:#171210;--card:#251d17;--ink:#f6ead6;--muted:#b9a68f;--acc:#ff7a4d;--acc2:#ffcc4d;--pur:#a47bff;--green:#5fcf9a;--bd:#3b2f25;--soft:#1e1712;--hero1:#c2371a;--hero2:#b8830a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Segoe UI','Noto Sans Devanagari',system-ui,sans-serif;overflow-x:hidden}
+.float{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.float i{position:absolute;font-style:normal;font-size:2rem;opacity:.16;animation:fl 14s linear infinite}
+@keyframes fl{0%{transform:translateY(105vh) rotate(0)}100%{transform:translateY(-15vh) rotate(360deg)}}
+.wrap{position:relative;z-index:1;max-width:700px;margin:0 auto;padding:0 16px 60px}
+.hero{margin:0 -16px 22px;padding:34px 20px 46px;text-align:center;color:#fff;background:linear-gradient(135deg,var(--hero1),var(--hero2));border-radius:0 0 34px 34px;position:relative}
+.top{display:flex;justify-content:flex-end}
+.lang{display:inline-flex;background:rgba(0,0,0,.22);border-radius:20px;padding:3px}
+.lang button{border:0;background:transparent;color:#fff;padding:6px 14px;border-radius:16px;cursor:pointer;font-weight:700;font-size:.85rem}
+.lang button.on{background:#fff;color:#c2371a}
+h1{font-size:clamp(2.6rem,12vw,4.4rem);margin:10px 0 0;font-weight:900;letter-spacing:3px;text-shadow:0 4px 0 rgba(0,0,0,.18)}
+h1 span{display:inline-block;animation:wob 2.2s ease-in-out infinite}
+@keyframes wob{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(10deg) scale(1.15)}}
+.tag0{font-size:1.05rem;opacity:.95;margin-top:6px}
+.stats{display:flex;gap:10px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.stat{background:rgba(255,255,255,.2);border-radius:14px;padding:8px 14px;min-width:92px}
+.stat b{display:block;font-size:1.3rem}.stat small{font-size:.7rem;opacity:.9;text-transform:uppercase;letter-spacing:.4px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:20px;margin-bottom:18px;box-shadow:0 6px 22px rgba(0,0,0,.06)}
+label{display:block;font-size:.75rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:0 0 6px}
+.row{display:flex;gap:10px;align-items:flex-end;margin-bottom:12px}.row>div{flex:1}
+.plus{font-size:1.6rem;font-weight:900;color:var(--acc);padding-bottom:6px}
+input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:2px solid var(--bd);background:var(--soft);color:var(--ink);font:inherit;font-size:1.05rem}
+input:focus,textarea:focus{outline:none;border-color:var(--acc)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.chip{border:1.5px solid var(--bd);background:var(--soft);color:var(--ink);padding:6px 12px;border-radius:18px;cursor:pointer;font:inherit;font-size:.85rem;font-weight:600}
+.chip:hover{border-color:var(--acc)}
+.chip.on{background:var(--pur);border-color:var(--pur);color:#fff}
+.go{width:100%;padding:15px;border:0;border-radius:14px;background:linear-gradient(90deg,var(--acc),#ff8a00);color:#fff;font-weight:900;font-size:1.15rem;cursor:pointer;box-shadow:0 5px 0 rgba(0,0,0,.18)}
+.go:active{transform:translateY(3px);box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.go:disabled{opacity:.6;cursor:wait}
+.err{color:#d64545;margin-top:10px;font-size:.9rem}
+.joke{display:none;margin-top:18px;padding:22px 20px 18px;background:var(--soft);border:2px dashed var(--acc2);border-radius:18px;position:relative;animation:pop .45s cubic-bezier(.2,1.6,.4,1)}
+.joke.show{display:block}
+@keyframes pop{from{transform:scale(.8) rotate(-2deg);opacity:0}}
+.joke:before{content:"“";position:absolute;top:-6px;left:12px;font-size:4.5rem;color:var(--acc);opacity:.4;font-family:Georgia,serif;line-height:1}
+.jt{font-size:1.2rem;line-height:1.6;font-weight:600;white-space:pre-line;margin-top:6px}
+.tag{display:inline-block;background:var(--green);color:#fff;font-size:.72rem;font-weight:800;padding:3px 11px;border-radius:12px;margin:0 6px 8px 0}
+.acts{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.acts button{flex:1;min-width:110px;border:2px solid var(--bd);background:var(--card);color:var(--ink);padding:9px;border-radius:12px;cursor:pointer;font:inherit;font-weight:700;font-size:.88rem}
+.acts button:hover{border-color:var(--acc)}
+.hd{font-weight:900;font-size:1.1rem;margin-bottom:12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.avg{font-size:.85rem;color:var(--muted);font-weight:700}
+.emo{display:flex;gap:8px;margin-bottom:14px}
+.emo button{flex:1;border:2px solid var(--bd);background:var(--soft);border-radius:14px;padding:8px 0;cursor:pointer;font-size:1.9rem;filter:grayscale(1);opacity:.6;transition:.15s}
+.emo button small{display:block;font-size:.6rem;color:var(--muted);font-weight:700;margin-top:2px;filter:none}
+.emo button.on{filter:none;opacity:1;border-color:var(--acc2);transform:translateY(-4px) scale(1.06)}
+.sub-btn{width:100%;padding:12px;border:0;border-radius:12px;background:var(--green);color:#fff;font-weight:800;cursor:pointer;margin-top:10px;font-size:1rem}
+.ok{display:none;margin-top:10px;background:var(--green);color:#fff;padding:10px;border-radius:10px;text-align:center;font-weight:700}
+.ok.show{display:block}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.step{background:var(--soft);border-radius:14px;padding:14px 8px}
+.step div{font-size:1.9rem}.step p{margin:4px 0 0;font-size:.82rem;font-weight:600}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+.item{border-bottom:1px solid var(--bd);padding:12px 0;font-size:.92rem;white-space:pre-line}.item:last-child{border:0}
+.meta{color:var(--muted);font-size:.75rem;margin-top:4px}.meta b{color:var(--acc2);font-weight:400;font-size:.9rem}
+.fb{margin-top:5px;font-style:italic;background:var(--soft);padding:6px 10px;border-radius:8px}
+.empty{color:var(--muted);text-align:center;padding:18px 0;font-size:.9rem}
+.load{display:inline-block;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="float" id="float"></div>
+<div class="wrap">
+<div class="hero">
+  <div class="top"><div class="lang"><button id="b-en" class="on">English</button><button id="b-hi">हिन्दी</button></div></div>
+  <h1>MW<span>😈</span>HAHA</h1>
+  <div class="tag0" id="sub"></div>
+  <div class="stats">
+    <div class="stat"><b id="s1">0</b><small id="s1l"></small></div>
+    <div class="stat"><b id="s2">–</b><small id="s2l"></small></div>
+    <div class="stat"><b id="s3">–</b><small id="s3l"></small></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="row">
+    <div><label id="l-w1"></label><input id="w1" maxlength="30"></div>
+    <div class="plus">+</div>
+    <div><label id="l-w2"></label><input id="w2" maxlength="30"></div>
+  </div>
+  <label id="l-try"></label>
+  <div class="chips" id="ex"></div>
+  <label id="l-genre"></label>
+  <div class="chips" id="genres"></div>
+  <button class="go" id="go"></button>
+  <div class="err" id="err"></div>
+  <div class="joke" id="joke"><div id="tags"></div><div class="jt" id="jt"></div>
+    <div class="acts"><button id="again"></button><button id="copy"></button><button id="share"></button></div>
+  </div>
+</div>
+
+<div class="card" id="survey" style="display:none">
+  <div class="hd" id="s-title"></div>
+  <label id="l-rate"></label>
+  <div class="emo" id="emo"></div>
+  <label id="l-fb"></label>
+  <textarea id="fb" rows="3" maxlength="300"></textarea>
+  <button class="sub-btn" id="submit"></button>
+  <div class="ok" id="ok"></div>
+</div>
+
+<div class="card">
+  <div class="hd" id="hw"></div>
+  <div class="steps" id="steps"></div>
+</div>
+
+<div class="card">
+  <div class="hd"><span id="h-title"></span><span class="avg" id="avg"></span></div>
+  <div id="list"></div>
+</div>
+<footer id="foot"></footer>
+</div>
+
+<script>
+const GENRES=['surprise','pun','dad','sarcastic','riddle','wordplay','knockknock','desi','dark','wholesome'];
+const GEMO={surprise:'🎲',pun:'🤓',dad:'👨',sarcastic:'🙄',riddle:'🧩',wordplay:'🔤',knockknock:'🚪',desi:'🫖',dark:'🖤',wholesome:'🥰'};
+const EM=['😐','🙂','😄','😂','🤣'];
+const T={
+en:{sub:'Two words in. One joke out. Mild damage to your dignity.',s1:'Jokes made',s2:'Avg rating',s3:'Fav genre',w1:'Word 1',w2:'Word 2',p1:'e.g. chai',p2:'e.g. traffic',try:'Try a combo',genre:'Genre',go:'😈 Make me laugh',busy:'Cooking up a joke…',
+ need:'Please enter two words.',fail:'The joke machine tripped. Here is a backup one.',again:'🔁 Another one',copy:'📋 Copy',share:'📤 Share',copied:'✅ Copied!',
+ st:'Did it land?',rate:'Laugh-o-meter',lab:['Meh','Smile','Haha','LOL','ROFL'],fb:'Feedback (optional)',fbp:'Roast the joke, or praise it…',sub2:'Submit feedback',needr:'Pick a laugh-o-meter face first.',ok:'Thanks! Your feedback is on the wall below. 🎉',
+ hw:'How it works',steps:[['✍️','Type any two words'],['🎭','Pick a genre or go random'],['🤣','Get a joke, then rate it']],
+ h:'Feedback wall',avg:'Avg',none:'No feedback yet. Be the first to judge!',foot:'MWAHAHA · jokes are AI-made, opinions are yours. Works offline with mwahaha_server.py running.',
+ ex:[['chai','traffic'],['cat','laptop'],['WiFi','mother-in-law'],['gym','samosa'],['exam','sleep']],
+ g:{surprise:'Surprise me',pun:'Pun',dad:'Dad Joke',sarcastic:'Sarcastic',riddle:'Riddle',wordplay:'Wordplay',knockknock:'Knock-Knock',desi:'Desi Humor',dark:'Dark Humor',wholesome:'Wholesome'},
+ fallback:['{a} and {b} started a business together. It failed, but the WhatsApp group is thriving.','Why did {a} block {b}? Too many "seen" and zero replies.','{a} told {b} a secret. Now it is on the family group. Classic {b}.']},
+hi:{sub:'दो शब्द डालो। एक जोक पाओ। इज़्ज़त को हल्का नुकसान संभव है।',s1:'जोक बने',s2:'औसत रेटिंग',s3:'पसंदीदा शैली',w1:'शब्द 1',w2:'शब्द 2',p1:'जैसे: चाय',p2:'जैसे: ट्रैफ़िक',try:'ये कॉम्बो आज़माओ',genre:'शैली',go:'😈 हँसाओ मुझे',busy:'जोक पक रहा है…',
+ need:'कृपया दो शब्द लिखें।',fail:'जोक मशीन अटक गई। ये बैकअप जोक लो।',again:'🔁 एक और',copy:'📋 कॉपी',share:'📤 शेयर',copied:'✅ कॉपी हो गया!',
+ st:'जोक चला क्या?',rate:'हँसी मीटर',lab:['फीका','मुस्कान','हा हा','LOL','लोटपोट'],fb:'फ़ीडबैक (वैकल्पिक)',fbp:'जोक की धज्जियाँ उड़ाओ या तारीफ़ करो…',sub2:'फ़ीडबैक भेजें',needr:'पहले हँसी मीटर का चेहरा चुनें।',ok:'शुक्रिया! आपका फ़ीडबैक नीचे दीवार पर लग गया। 🎉',
+ hw:'कैसे काम करता है',steps:[['✍️','कोई भी दो शब्द लिखो'],['🎭','शैली चुनो या रैंडम रखो'],['🤣','जोक पाओ, फिर रेटिंग दो']],
+ h:'फ़ीडबैक की दीवार',avg:'औसत',none:'अभी कोई फ़ीडबैक नहीं। पहला फ़ैसला आप सुनाओ!',foot:'MWAHAHA · जोक AI के, राय आपकी। mwahaha_server.py चलाकर ऑफ़लाइन भी काम करता है।',
+ ex:[['चाय','ट्रैफ़िक'],['बिल्ली','मोबाइल'],['वाई-फ़ाई','सास'],['जिम','समोसा'],['परीक्षा','नींद']],
+ g:{surprise:'कुछ भी चलेगा',pun:'श्लेष (पन)',dad:'डैड जोक',sarcastic:'व्यंग्य',riddle:'पहेली',wordplay:'शब्दों का खेल',knockknock:'नॉक-नॉक',desi:'देसी ह्यूमर',dark:'डार्क ह्यूमर',wholesome:'प्यारा/सुथरा'},
+ fallback:['{a} और {b} ने मिलकर बिज़नेस खोला। फ़ेल हो गया, पर व्हाट्सऐप ग्रुप सुपरहिट है।','{a} ने {b} को ब्लॉक क्यों किया? "सीन" बहुत, रिप्लाई ज़ीरो।','{a} ने {b} को राज़ बताया। अब वो फ़ैमिली ग्रुप में है। पक्का {b} का काम।']}
+};
+let lang='en',genre='surprise',cur=null,rating=0;
+const $=id=>document.getElementById(id);
+const KEY='mwahaha_feedback',CNT='mwahaha_count';
+const load=()=>{try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return []}};
+const save=l=>{try{localStorage.setItem(KEY,JSON.stringify(l))}catch(e){}};
+const getN=()=>{try{return +localStorage.getItem(CNT)||0}catch(e){return 0}};
+const bump=()=>{try{localStorage.setItem(CNT,getN()+1)}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+$('float').innerHTML=['😂','🤣','😈','🎭','🥳','🤪','💥','🫖'].map((e,i)=>'<i style="left:'+(i*13+3)+'%;animation-delay:-'+(i*1.9)+'s;animation-duration:'+(11+i*2)+'s">'+e+'</i>').join('');
+
+function ui(){
+  const t=T[lang];document.documentElement.lang=lang;
+  $('sub').textContent=t.sub;$('s1l').textContent=t.s1;$('s2l').textContent=t.s2;$('s3l').textContent=t.s3;
+  $('l-w1').textContent=t.w1;$('l-w2').textContent=t.w2;$('w1').placeholder=t.p1;$('w2').placeholder=t.p2;
+  $('l-try').textContent=t.try;$('l-genre').textContent=t.genre;$('go').textContent=t.go;
+  $('ex').innerHTML=t.ex.map((p,i)=>'<button class="chip" data-i="'+i+'">'+p[0]+' + '+p[1]+'</button>').join('');
+  $('genres').innerHTML=GENRES.map(g=>'<button class="chip'+(g===genre?' on':'')+'" data-g="'+g+'">'+GEMO[g]+' '+t.g[g]+'</button>').join('');
+  $('again').textContent=t.again;$('copy').textContent=t.copy;$('share').textContent=t.share;
+  $('s-title').textContent=t.st;$('l-rate').textContent=t.rate;$('l-fb').textContent=t.fb;$('fb').placeholder=t.fbp;$('submit').textContent=t.sub2;
+  $('emo').innerHTML=EM.map((e,i)=>'<button data-v="'+(i+1)+'" class="'+(rating===i+1?'on':'')+'">'+e+'<small>'+t.lab[i]+'</small></button>').join('');
+  $('hw').textContent=t.hw;$('steps').innerHTML=t.steps.map(s=>'<div class="step"><div>'+s[0]+'</div><p>'+s[1]+'</p></div>').join('');
+  $('h-title').textContent=t.h;$('foot').textContent=t.foot;
+  $('b-en').classList.toggle('on',lang==='en');$('b-hi').classList.toggle('on',lang==='hi');
+  if(cur)$('tags').innerHTML=tagsHtml();
+  render();
+}
+$('b-en').onclick=()=>{lang='en';ui()};$('b-hi').onclick=()=>{lang='hi';ui()};
+$('ex').onclick=e=>{const i=e.target.dataset.i;if(i!=null){const p=T[lang].ex[i];$('w1').value=p[0];$('w2').value=p[1]}};
+$('genres').onclick=e=>{const g=e.target.closest('[data-g]');if(g){genre=g.dataset.g;ui()}};
+$('emo').onclick=e=>{const b=e.target.closest('[data-v]');if(b){rating=+b.dataset.v;ui()}};
+
+function tagsHtml(){const t=T[lang];return '<span class="tag">'+GEMO[cur.genre]+' '+esc((T[lang].g[cur.genre]||cur.genre))+'</span><span class="tag" style="background:var(--pur)">'+esc(cur.w1)+' + '+esc(cur.w2)+'</span>'}
+
+const LOCAL_SERVER='http://127.0.0.1:8765/joke';
+
+function buildPrompt(w1,w2,g,lg){
+  const pool=GENRES.filter(x=>x!=='surprise').join(', ');
+  const gdesc=g==='surprise'?'whichever genre gives the biggest laugh (choose from: '+pool+')':g;
+  const styleNote={desi:'Desi humor: everyday Indian life (chai, traffic, sharma ji ka beta, WhatsApp uncles, shaadi, exams, mothers, autowalas, cricket). Affectionate, never mocking any religion, caste, region or community.',dark:'Dark humor: morbid or bleak but cleverly so; nothing hateful, no slurs, no real tragedies or real people.',knockknock:'Use the classic knock-knock format.',riddle:'A riddle with a funny answer.'}[g]||'';
+  const langNote=lg==='hi'
+    ? 'Write in natural, casual Hindi in Devanagari, the way a funny friend actually talks (English words like WiFi, WhatsApp, boss are fine). No stiff or textbook Hindi, no literal translations of English jokes. The wordplay must work in Hindi.'
+    : 'Write in punchy, conversational English.';
+  const prompt='You are a veteran stand-up comedian and joke writer known for razor-sharp punchlines.\n'+
+   'Task: a joke built on the two words "'+w1+'" and "'+w2+'". Both must appear (or be clearly referenced).\nGenre: '+gdesc+'. '+styleNote+'\n'+langNote+'\n\n'+
+   'Method: privately draft 4 jokes, each using a different comedy device (misdirection, rule of three, absurd exaggeration, subverted expectation, self-deprecation, clever pun). Score each for surprise and laugh-out-loud value, then output ONLY the single best one.\n'+
+   'Rules: setup first, punchline LAST and short. Max 3 sentences (a knock-knock may be longer). Be specific, not generic. Never explain the joke. Avoid tired templates ("walked into a bar", "why did X cross the road") and avoid ending with "and that is why". Make the two words collide in an unexpected way. Nothing hateful, sexual, or targeting real people or groups.';
+  return {prompt,pool};
+}
+
+// 1) Offline path: a local Ollama-backed server (see mwahaha_server.py) running on this machine.
+async function askLocalServer(w1,w2,g,lg,prompt){
+  const ctrl=new AbortController();
+  const timer=setTimeout(()=>ctrl.abort(),20000);
+  try{
+    const res=await fetch(LOCAL_SERVER,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({prompt,language:lg==='hi'?'Hindi':'English'}),signal:ctrl.signal});
+    clearTimeout(timer);
+    if(!res.ok) throw new Error('local-http');
+    const data=await res.json();
+    if(!data||!data.joke) throw new Error('local-empty');
+    return {joke:String(data.joke),genre:g==='surprise'?'pun':g};
+  }catch(e){clearTimeout(timer);throw e}
+}
+
+// 2) Online path: Claude, when this page is open as a published artifact (needs internet).
+async function askHosted(w1,w2,g,lg,prompt,pool){
+  const sample=await claude.use('sample');
+  if(!sample) throw new Error('nosample');
+  const r=await sample.json(prompt+'\n\nReturn ONLY JSON: {"joke":"...","genre":"one of '+pool+'"}',{modelTier:'default',cache:false});
+  if(!r||!r.joke) throw new Error('bad');
+  return {joke:String(r.joke),genre:GENRES.includes(r.genre)&&r.genre!=='surprise'?r.genre:(g==='surprise'?'pun':g)};
+}
+
+async function ask(w1,w2,g,lg){
+  const {prompt,pool}=buildPrompt(w1,w2,g,lg);
+  try{ return await askLocalServer(w1,w2,g,lg,prompt) }catch(e){}
+  return await askHosted(w1,w2,g,lg,prompt,pool);
+}
+
+async function generate(){
+  const t=T[lang],w1=$('w1').value.trim(),w2=$('w2').value.trim();
+  $('err').textContent='';
+  if(!w1||!w2){$('err').textContent=t.need;return}
+  $('go').disabled=true;$('go').innerHTML='<span class="load">🎭</span> '+t.busy;
+  let res;
+  try{res=await ask(w1,w2,genre,lang)}
+  catch(e){
+    $('err').textContent=t.fail;
+    const f=t.fallback[Math.floor(Math.random()*3)].split('{a}').join(w1).split('{b}').join(w2);
+    res={joke:f,genre:genre==='surprise'?'desi':genre};
+  }
+  cur={w1,w2,lang,genre:res.genre,joke:res.joke};bump();
+  $('tags').innerHTML=tagsHtml();$('jt').textContent=res.joke;
+  const j=$('joke');j.classList.remove('show');void j.offsetWidth;j.classList.add('show');
+  $('survey').style.display='block';rating=0;$('fb').value='';$('ok').classList.remove('show');
+  $('go').disabled=false;$('go').textContent=t.go;ui();
+}
+$('go').onclick=generate;$('again').onclick=generate;
+$('copy').onclick=async()=>{if(!cur)return;try{await navigator.clipboard.writeText(cur.joke+'\n— MWAHAHA 😈');$('copy').textContent=T[lang].copied;setTimeout(()=>$('copy').textContent=T[lang].copy,1500)}catch(e){}};
+$('share').onclick=async()=>{if(!cur)return;try{if(navigator.share)await navigator.share({text:cur.joke+'\n— MWAHAHA 😈'});else $('copy').click()}catch(e){}};
+
+$('submit').onclick=()=>{
+  if(!cur)return;
+  if(!rating){alert(T[lang].needr);return}
+  const l=load();l.unshift({...cur,rating,feedback:$('fb').value.trim(),ts:Date.now()});save(l.slice(0,100));
+  $('ok').textContent=T[lang].ok;$('ok').classList.add('show');render();
+};
+
+function render(){
+  const t=T[lang],l=load();
+  $('s1').textContent=getN();
+  $('s2').textContent=l.length?(l.reduce((a,x)=>a+x.rating,0)/l.length).toFixed(1)+'★':'–';
+  const c={};l.forEach(x=>c[x.genre]=(c[x.genre]||0)+1);
+  const top=Object.keys(c).sort((a,b)=>c[b]-c[a])[0];
+  $('s3').textContent=top?GEMO[top]:'–';
+  $('avg').textContent=l.length?t.avg+': '+(l.reduce((a,x)=>a+x.rating,0)/l.length).toFixed(1)+' ('+l.length+')':'';
+  $('list').innerHTML=l.length?l.map(x=>{
+    const g=(T[x.lang]||T.en).g[x.genre]||x.genre;
+    return '<div class="item">'+esc(x.joke)+'<div class="meta"><b>'+EM[x.rating-1]+'</b> '+'★'.repeat(x.rating)+'☆'.repeat(5-x.rating)+' · '+GEMO[x.genre]+' '+esc(g)+' · '+esc(x.w1)+' + '+esc(x.w2)+'</div>'+
+      (x.feedback?'<div class="fb">“'+esc(x.feedback)+'”</div>':'')+'</div>';
+  }).join(''):'<div class="empty">'+t.none+'</div>';
+}
+ui();
+</script>
+</body>
+</html>
