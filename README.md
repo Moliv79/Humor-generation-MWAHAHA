@@ -1,2 +1,94 @@
-# Humor-generation-MWAHAHA
-A Streamlit-based humor generation website that generates jokes in English and Hindi across different genres. Users can explore different types of humor, rate generated jokes, and share their reviews. Developed as part of the MWAHAHA (Models Write Automatic Humor And Humans Annotate) project.
+# 😂 MWAHAHA – Humor Generator
+
+## 📌 About the Project
+
+MWAHAHA (Models Write Automatic Humor And Humans Annotate) is a humor generation website developed using Python and Streamlit. It generates jokes in English and Hindi across different genres, allowing users to explore different styles of humor.
+
+The website aims to make joke generation simple, interactive, and entertaining.
+
+## ✨ Features
+
+- **Multi-language Support:** Generate jokes in English and Hindi.
+- **Multiple Genres:** Choose from different humor genres and categories.
+- **Joke Generation:** Generate jokes based on the selected language and genre.
+- **Joke Rating:** Rate the generated jokes.
+- **User Reviews:** Share feedback and opinions about generated jokes.
+- **Simple Interface:** Easy-to-use website built with Streamlit.
+
+## 🛠️ Technologies Used
+
+- Python
+- Streamlit
+- HTML/CSS (if used in the project)
+
+## 📂 Project Structure
+
+```text
+MWAHAHA/
+│
+├── app.py
+├── humor_engine.py
+├── requirements.txt
+├── README.md
+└── screenshots/
+```
+
+## ⚙️ Installation and Setup
+
+**Step 1: Clone the repository**
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+**Step 2: Open the project folder**
+
+```bash
+cd MWAHAHA
+```
+
+**Step 3: Create a virtual environment (optional)**
+
+```bash
+python -m venv venv
+```
+
+**Step 4: Install the required libraries**
+
+```bash
+pip install -r requirements.txt
+```
+
+**Step 5: Run the application**
+
+```bash
+streamlit run app.py
+```
+
+The website will open in your browser.
+
+## 🖥️ Screenshots
+
+Add screenshots of your website here to demonstrate its interface and features.
+
+## 🎯 Project Objective
+
+The main objective of MWAHAHA is to explore automated humor generation through different languages and genres while allowing users to evaluate the generated jokes through ratings and reviews.
+
+## 👩‍💻 Project Information
+
+**Project Name:** MWAHAHA – Humor Generator
+
+**Framework:** Streamlit
+
+**Programming Language:** Python
+
+**Project Domain:** Natural Language Processing / Humor Generation
+
+## 📜 Acknowledgement
+
+This project is inspired by the MWAHAHA (Models Write Automatic Humor And Humans Annotate) SemEval 2026 Task 1.
+
+## 📄 License
+
+This project is developed for educational and academic purposes.
