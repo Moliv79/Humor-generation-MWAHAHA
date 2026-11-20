@@ -69,7 +69,9 @@ The website will open in your browser.
 
 ## 🖥️ Screenshots
 
-Add screenshots of your website here to demonstrate its interface and features.
+<img width="1104" height="719" alt="Screenshot 2026-11-20 at 6 32 48 PM" src="https://github.com/user-attachments/assets/9e39105a-6a18-461b-a1cb-324798e17a8b" />
+<img width="803" height="790" alt="Screenshot 2026-11-20 at 6 33 40 PM" src="https://github.com/user-attachments/assets/ff1d6287-79bf-4321-9788-750064f6ca1f" />
+
 
 ## 🎯 Project Objective
 
