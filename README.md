@@ -19,7 +19,7 @@ The website aims to make joke generation simple, interactive, and entertaining.
 
 - Python
 - Streamlit
-- HTML/CSS (if used in the project)
+- HTML
 
 ## 📂 Project Structure
 
